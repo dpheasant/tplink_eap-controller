@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+  web:
+    build: "./Dockerfile"
+    image: "eap_controller:latest"
+    volumes:
+      - "data:/opt/tplink/EAP_Controller/data"
+    ports:
+      - "8088:8088"
+      - "8043:8043"
+    networks:
+     - public
+
+volumes:
+  data:
+
+networks:
+  public:
